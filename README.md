@@ -8,4 +8,4 @@ It's been a few months, and I've yet to return to it. I want to apply what I've 
 
 ## Implementation
 
-Made into an HTML/JS/CSS static site with LESS and Jade precompilers.
+Made into an HTML/JS/CSS static site with the LESS precompiler.

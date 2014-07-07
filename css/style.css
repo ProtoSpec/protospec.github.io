@@ -1,18 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
-#blog:hover {
-  cursor: default;
-}
-html {
-  height: 100%;
-  width: 100%;
+body {
   font-family: 'Ubuntu', sans-serif;
+}
+body #content {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../images/colorBackground.jpg');
+  background-size: 100% 100%;
   color: #FFFFFF;
 }
-html body {
-  height: 100%;
-  width: 100%;
-}
-html body #fullbackground {
+body #content #fullbackground {
   position: absolute;
   z-index: -2;
   top: 0;
@@ -20,43 +17,50 @@ html body #fullbackground {
   width: 100%;
   height: 100%;
 }
-html body #content * {
+body #content .major-link {
   position: absolute;
   text-decoration: none;
   color: inherit;
-}
-html body #content .iconlink {
-  transition-duration: .15s;
-}
-html body #content .iconlink:hover {
-  -webkit-transform: scale(1.1);
-}
-html body #content .major-link {
   font-size: 30px;
   top: 65%;
   opacity: 0.8;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
-html body #content .major-link:hover {
+body #content .major-link:hover {
   opacity: 1.0;
 }
-html body #content #name {
+body #content #name {
+  position: absolute;
+  left: 50%:
+      top: 40%;
   font-size: 40px;
   top: 37%;
   left: 50%;
   text-align: center;
   cursor: default;
 }
-html body #content #resume {
+body #content #resume-link {
   left: 25%;
 }
-html body #content #blog {
+body #content #blog-link {
   left: 41%;
 }
-html body #content #github {
+body #content #github-link {
   left: 59%;
 }
-html body #content #linkedin {
+body #content #linkedin-link {
   left: 75%;
+}
+body #blog {
+  height: 100vh;
+  width: 100vw;
+}
+body #blog #blog-title {
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: 40px;
+  text-align: center;
 }

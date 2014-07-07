@@ -1,18 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
 
-#blog:hover {
-  cursor: default;
-}
-
-html {
-  height: 100%;
-  width: 100%;
-
+body {
   font-family: 'Ubuntu', sans-serif;
-  color: #FFFFFF;
-  body {
-    height: 100%;
-    width: 100%;
+
+  #content {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url('../images/colorBackground.jpg');
+    background-size: 100% 100%;
+
+    color: #FFFFFF;
 
     #fullbackground {
       position: absolute;
@@ -23,57 +21,65 @@ html {
       height: 100%;
     }
 
-    #content {
-      * {
-        position: absolute;
-        text-decoration: none;
-        color: inherit;
-      }
+    .major-link {
+      position: absolute;
+      text-decoration: none;
+      color: inherit;
 
-      .iconlink {
-        transition-duration: .15s;
-      }
+      font-size: 30px;
+      top: 65%;
+      opacity: 0.8;
 
-      .iconlink:hover {
-        -webkit-transform: scale(1.1);
-      }
+      -webkit-transition: opacity 0.2s ease;
+              transition: opacity 0.2s ease;
+    }
 
-      .major-link {
-        font-size: 30px;
-        top: 65%;
-        opacity: 0.8;
+    .major-link:hover {
+      opacity: 1.0;
+    }
 
-        -webkit-transition: opacity 0.2s ease;
-                transition: opacity 0.2s ease;
-      }
+    #name {
+      position: absolute;
+      left: 50%:
+      top: 40%;
 
-      .major-link:hover {
-        opacity: 1.0;
-      }
+      font-size: 40px;
+      top: 37%;
+      left: 50%;
+      text-align: center;
+      cursor: default;
+    }
 
-      #name {
-        font-size: 40px;
-        top: 37%;
-        left: 50%;
-        text-align: center;
-        cursor: default;
-      }
+    #resume-link {
+      left: 25%;
+    }
 
-      #resume {
-        left: 25%;
-      }
+    #blog-link {
+      left: 41%;
+    }
 
-      #blog {
-        left: 41%;
-      }
+    #github-link {
+      left: 59%;
+    }
 
-      #github {
-        left: 59%;
-      }
+    #linkedin-link {
+      left: 75%;
+    }
+  }
 
-      #linkedin {
-        left: 75%;
-      }
+  #blog {
+    height: 100vh;
+    width: 100vw;
+
+    #blog-title {
+      display: block;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 30px;
+
+      font-size: 40px;
+
+      text-align: center;
     }
   }
 }
