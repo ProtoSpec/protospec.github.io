@@ -1,1 +1,59 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);html{height:100%;width:100%;font-family:'Ubuntu',sans-serif;color:#fff}html body{height:100%;width:100%}html body #fullbackground{position:absolute;z-index:-2;top:0;left:0;width:100%;height:100%}html body #content *{position:absolute;text-decoration:none;color:inherit}html body #content .iconlink{transition-duration:.15s}html body #content .iconlink:hover{-webkit-transform:scale(1.2)}html body #content #name{font-size:40px;top:50%;left:50%;text-align:center;cursor:default}html body #content #linkedin{font-size:60px;top:25%;left:75%}html body #content #resume{font-size:90px;top:25%;left:25%}html body #content #github{font-size:80px;top:75%;left:50%}
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  color: #FFFFFF;
+}
+html body {
+  height: 100%;
+  width: 100%;
+}
+html body #fullbackground {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+html body #content * {
+  position: absolute;
+  text-decoration: none;
+  color: inherit;
+}
+html body #content .iconlink {
+  transition-duration: .15s;
+}
+html body #content .iconlink:hover {
+  -webkit-transform: scale(1.1);
+}
+html body #content .major-link {
+  font-size: 30px;
+  top: 65%;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+html body #content .major-link:hover {
+  opacity: 1.0;
+}
+html body #content #name {
+  font-size: 40px;
+  top: 37%;
+  left: 50%;
+  text-align: center;
+  cursor: default;
+}
+html body #content #resume {
+  left: 25%;
+}
+html body #content #blog {
+  left: 41%;
+}
+html body #content #github {
+  left: 59%;
+}
+html body #content #linkedin {
+  left: 75%;
+}

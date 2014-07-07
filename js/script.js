@@ -3,7 +3,8 @@ $(function() {
 		$('#name'),
 		$('#linkedin'),
 		$('#resume'),
-		$('#github')
+		$('#github'),
+		$('#blog')
 	];
 
 	var transitionTime;
