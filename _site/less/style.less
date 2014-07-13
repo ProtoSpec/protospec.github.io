@@ -1,0 +1,85 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+
+  #content {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url('../images/colorBackground.jpg');
+    background-size: 100% 100%;
+
+    color: #FFFFFF;
+
+    #fullbackground {
+      position: absolute;
+      z-index: -2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .major-link {
+      position: absolute;
+      text-decoration: none;
+      color: inherit;
+
+      font-size: 30px;
+      top: 65%;
+      opacity: 0.8;
+
+      -webkit-transition: opacity 0.2s ease;
+              transition: opacity 0.2s ease;
+    }
+
+    .major-link:hover {
+      opacity: 1.0;
+    }
+
+    #name {
+      position: absolute;
+      left: 50%:
+      top: 40%;
+
+      font-size: 40px;
+      top: 37%;
+      left: 50%;
+      text-align: center;
+      cursor: default;
+    }
+
+    #resume-link {
+      left: 25%;
+    }
+
+    #blog-link {
+      left: 41%;
+    }
+
+    #github-link {
+      left: 59%;
+    }
+
+    #linkedin-link {
+      left: 75%;
+    }
+  }
+
+  #blog {
+    height: 100vh;
+    width: 100vw;
+
+    #blog-title {
+      display: block;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 30px;
+
+      font-size: 40px;
+
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+body #content {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../images/colorBackground.jpg');
+  background-size: 100% 100%;
+  color: #FFFFFF;
+}
+body #content #fullbackground {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+body #content .major-link {
+  position: absolute;
+  text-decoration: none;
+  color: inherit;
+  font-size: 30px;
+  top: 65%;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+body #content .major-link:hover {
+  opacity: 1.0;
+}
+body #content #name {
+  position: absolute;
+  left: 50%:
+      top: 40%;
+  font-size: 40px;
+  top: 37%;
+  left: 50%;
+  text-align: center;
+  cursor: default;
+}
+body #content #resume-link {
+  left: 25%;
+}
+body #content #blog-link {
+  left: 41%;
+}
+body #content #github-link {
+  left: 59%;
+}
+body #content #linkedin-link {
+  left: 75%;
+}
+body #blog {
+  height: 100vh;
+  width: 100vw;
+}
+body #blog #blog-title {
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: 40px;
+  text-align: center;
+}
