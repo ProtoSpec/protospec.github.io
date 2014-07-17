@@ -1,4 +1,4 @@
-# Bryan Alexander William Jensen
+# Bryan A. W. Jensen
 
 Github user page as my personal website.
 

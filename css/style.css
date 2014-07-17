@@ -55,6 +55,8 @@ body #content #linkedin-link {
 body #blog {
   height: 100vh;
   width: 100vw;
+  background-color: black;
+  color: white;
 }
 body #blog #blog-title {
   display: block;
