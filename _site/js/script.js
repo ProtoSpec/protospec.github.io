@@ -21,6 +21,7 @@ function centerElements(elementsToCenter) {
 }
 
 $(function() {
+
 	var elementsToCenter = [
 		$('#name'),
 		$('#linkedin-link'),
@@ -29,6 +30,7 @@ $(function() {
 		$('#blog-link')
 	];
 	var blogShowing = false;
+	var blogEntryShowing = false;
 
 	centerElements(elementsToCenter);
 
@@ -78,12 +80,32 @@ $(function() {
 			blogShowing = true;
 
 			$('.blog-options-link').click(function() {
-				console.log('show' + $(this).attr('id'));
+				var myRootRef = new Firebase('https://personal-blog.firebaseIO.com/tech-blog/posts/');
+
+				$('.blog-options-link').css('float', 'left');
+
+				var blogText = $('<div/>', {
+					id: 'blog-text'
+				});
+
+				var loadingImage = $('<img/>', {
+					id: 'blog-loading-gif',
+					src: 'images/loading.gif'
+				});
+
+				blogText.append(loadingImage);
+
+				$('#' + blogText.attr('id')).remove();
+				blogDiv.append(blogText);
+
+				myRootRef.on('child_added', function(snapshot) {
+					console.dir(snapshot.val());
+				});
 			});
 		}
 
 		$('html, body').animate({
 			scrollTop: $('#blog').offset().top
-		}, 750);
+		}, 500);
 	});
 });

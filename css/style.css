@@ -82,5 +82,13 @@ body #blog #blog-options .blog-options-link {
   display: block;
   width: 200px;
   margin: 20px auto;
+  padding: 5px;
   cursor: pointer;
+  -webkit-box-shadow: 2px 2px 5px 0px #000000;
+  -moz-box-shadow: 2px 2px 5px 0px #000000;
+  box-shadow: 2px 2px 5px 0px #000000;
+}
+body #blog #blog-loading-gif {
+  height: 32px;
+  width: auto;
 }
