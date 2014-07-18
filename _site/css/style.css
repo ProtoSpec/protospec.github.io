@@ -55,7 +55,12 @@ body #content #linkedin-link {
 body #blog {
   height: 100vh;
   width: 100vw;
-  background-color: black;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000), color-stop(1, #6b6b6b));
+  background-image: -o-linear-gradient(bottom, #000000 0%, #6b6b6b 100%);
+  background-image: -moz-linear-gradient(bottom, #000000 0%, #6b6b6b 100%);
+  background-image: -webkit-linear-gradient(bottom, #000000 0%, #6b6b6b 100%);
+  background-image: -ms-linear-gradient(bottom, #000000 0%, #6b6b6b 100%);
+  background-image: linear-gradient(to bottom, #000000 0%, #6b6b6b 100%);
   color: white;
 }
 body #blog #blog-title {
@@ -65,4 +70,17 @@ body #blog #blog-title {
   padding-bottom: 30px;
   font-size: 40px;
   text-align: center;
+}
+body #blog #blog-general-description {
+  display: block;
+  width: 100%;
+  padding-bottom: 30px;
+  font-size: 25px;
+  text-align: center;
+}
+body #blog #blog-options .blog-options-link {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  cursor: pointer;
 }

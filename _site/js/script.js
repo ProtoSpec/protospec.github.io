@@ -45,11 +45,41 @@ $(function() {
 				html: 'Welcome!'
 			});
 
+			var blogGeneralDescription = $('<span/>', {
+				id: 'blog-general-description',
+				html: 'What do you want to read about?'
+			});
+
+			var blogOptions = $('<div/>', {
+				id: 'blog-options'
+			});
+
+			var option1 = $('<span/>', {
+				id: 'tech-blog',
+				class: 'blog-options-link',
+				html: 'Technology'
+			});
+
+			var option2 = $('<span/>', {
+				id: 'thoughts-blog',
+				class: 'blog-options-link',
+				html: 'General Thoughts'
+			});
+
+			blogOptions.append(option1);
+			blogOptions.append(option2);
+
 			blogDiv.append(blogTitle);
+			blogDiv.append(blogGeneralDescription);
+			blogDiv.append(blogOptions);
 
 			blogDiv.insertAfter($('#content'));
 
 			blogShowing = true;
+
+			$('.blog-options-link').click(function() {
+				console.log('show' + $(this).attr('id'));
+			});
 		}
 
 		$('html, body').animate({
