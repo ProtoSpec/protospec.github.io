@@ -20,6 +20,31 @@ function centerElements(elementsToCenter) {
 	}, 500);
 }
 
+function displayTopicPosts(listContainer) {
+	console.log('Getting posts for ' + this.id);
+	var postsRef = new Firebase('https://personal-blog.firebaseIO.com/topics/' + this.id + '/posts/');
+
+	// $('.blog-options-link').css('float', 'left');
+
+	var blogText = $('<div/>', {
+		id: 'blog-text'
+	});
+
+	var loadingImage = $('<img/>', {
+		id: 'blog-loading-gif',
+		src: 'images/loading.gif'
+	});
+
+	blogText.empty();
+	blogText.append(loadingImage);
+
+	$('#blog').append(blogText);
+
+	postsRef.on('child_added', function(snapshot) {
+		console.dir(snapshot.val());
+	});
+}
+
 $(function() {
 
 	var elementsToCenter = [
@@ -38,6 +63,8 @@ $(function() {
 		event.preventDefault();
 
 		if (!blogShowing) {
+			var topicsRef = new Firebase('https://personal-blog.firebaseIO.com/topics/');
+
 			var blogDiv = $('<div/>', {
 				id: 'blog'
 			});
@@ -56,20 +83,20 @@ $(function() {
 				id: 'blog-options'
 			});
 
-			var option1 = $('<span/>', {
-				id: 'tech-blog',
-				class: 'blog-options-link',
-				html: 'Technology'
-			});
+			var options = [];
 
-			var option2 = $('<span/>', {
-				id: 'thoughts-blog',
-				class: 'blog-options-link',
-				html: 'General Thoughts'
-			});
+			topicsRef.on('child_added', function(snapshot) {
+				jsonObject = snapshot.val();
 
-			blogOptions.append(option1);
-			blogOptions.append(option2);
+				var newTopicLink = $('<span/>', {
+					id: snapshot.name(),
+					class: 'blog-options-link',
+					html: jsonObject['display-name']
+				});
+
+				newTopicLink.click(displayTopicPosts);
+				blogOptions.append(newTopicLink);
+			});
 
 			blogDiv.append(blogTitle);
 			blogDiv.append(blogGeneralDescription);
@@ -78,30 +105,6 @@ $(function() {
 			blogDiv.insertAfter($('#content'));
 
 			blogShowing = true;
-
-			$('.blog-options-link').click(function() {
-				var myRootRef = new Firebase('https://personal-blog.firebaseIO.com/tech-blog/posts/');
-
-				$('.blog-options-link').css('float', 'left');
-
-				var blogText = $('<div/>', {
-					id: 'blog-text'
-				});
-
-				var loadingImage = $('<img/>', {
-					id: 'blog-loading-gif',
-					src: 'images/loading.gif'
-				});
-
-				blogText.append(loadingImage);
-
-				$('#' + blogText.attr('id')).remove();
-				blogDiv.append(blogText);
-
-				myRootRef.on('child_added', function(snapshot) {
-					console.dir(snapshot.val());
-				});
-			});
 		}
 
 		$('html, body').animate({
