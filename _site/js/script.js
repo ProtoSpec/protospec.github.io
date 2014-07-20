@@ -20,29 +20,63 @@ function centerElements(elementsToCenter) {
 	}, 500);
 }
 
-function displayTopicPosts(listContainer) {
-	console.log('Getting posts for ' + this.id);
-	var postsRef = new Firebase('https://personal-blog.firebaseIO.com/topics/' + this.id + '/posts/');
+function displayPost() {
 
-	// $('.blog-options-link').css('float', 'left');
+	// $('.blog-topic-link').css('float', 'left');
 
-	var blogText = $('<div/>', {
-		id: 'blog-text'
-	});
+	var blogTextExists = $('#blog-text').length != 0;
+
+	if (!blogTextExists) {
+		var blogText = $('<div/>', {
+			id: 'blog-text'
+		});
+
+		$('#blog').append(blogText);
+	}
+	else {
+		$('#blog-text').empty();
+	}
 
 	var loadingImage = $('<img/>', {
 		id: 'blog-loading-gif',
 		src: 'images/loading.gif'
 	});
 
-	blogText.empty();
 	blogText.append(loadingImage);
 
-	$('#blog').append(blogText);
 
 	postsRef.on('child_added', function(snapshot) {
 		console.dir(snapshot.val());
 	});
+
+}
+
+function topicLinkClickCallback(clickEvent) {
+	// NOTE: "this" refers to the topic link clicked
+	displayTopicLinkPosts($(this), this.id);
+}
+
+function displayTopicLinkPosts(containerListItem, topicID) {
+	console.log('Getting posts for ' + topicID);
+	var postsRef = new Firebase('https://personal-blog.firebaseIO.com/topics/' + topicID + '/posts/');
+
+	var subList = $('<ul/>', { class: 'blog-topic-post-list' });
+
+	containerListItem.append(subList);
+
+	postsRef.on('child_added', function(snapshot) {
+		console.log('Adding post to ' + topicID);
+		var jsonObject = snapshot.val();
+
+		var newPost = $('<li/>', {
+			id: snapshot.name(),
+			class: 'snapshot-topic-post-link',
+			html: jsonObject['title']
+		});
+
+		subList.append(newPost);
+	});
+
 }
 
 $(function() {
@@ -79,22 +113,20 @@ $(function() {
 				html: 'What do you want to read about?'
 			});
 
-			var blogOptions = $('<div/>', {
+			var blogOptions = $('<ul/>', {
 				id: 'blog-options'
 			});
-
-			var options = [];
 
 			topicsRef.on('child_added', function(snapshot) {
 				jsonObject = snapshot.val();
 
-				var newTopicLink = $('<span/>', {
+				var newTopicLink = $('<li/>', {
 					id: snapshot.name(),
-					class: 'blog-options-link',
+					class: 'blog-topic-link',
 					html: jsonObject['display-name']
 				});
 
-				newTopicLink.click(displayTopicPosts);
+				newTopicLink.click(topicLinkClickCallback);
 				blogOptions.append(newTopicLink);
 			});
 
