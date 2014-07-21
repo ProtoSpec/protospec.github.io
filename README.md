@@ -12,4 +12,5 @@ Update (7/06/14): Made some starts towards adding a blog, using some fancier con
 
 ## Implementation
 
-Created as an HTML/JS/CSS static site with the LESS precompiler.
+Created as an HTML/JS/CSS static site with the LESS precompiler. Possibly considering adding JADE into the mix.
+Uses Firebase as a database, on the front-end.
