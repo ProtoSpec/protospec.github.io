@@ -10,6 +10,8 @@ NOTE: Everything as a part of this site was (at least so far) made from scratch 
 
 Update (7/06/14): Made some starts towards adding a blog, using some fancier concepts, at least more fancy than exist so far on my site. Also, I removed the icons, because I don't see them adding that much to the site.
 
+Update (7/29/14): Time flies and it's impossible to get motivated after work. I'm not a fan of commuting.
+
 ## Implementation
 
 Created as an HTML/JS/CSS static site with the LESS precompiler. Possibly considering adding JADE into the mix.
