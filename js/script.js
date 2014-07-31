@@ -1,3 +1,58 @@
+var blog = {
+	blogShowing: false,
+	blogEntryShowing: false,
+
+	display: function() {
+		if (!this.blogShowing) {
+			var topicsRef = new Firebase('https://personal-blog.firebaseIO.com/topics/');
+
+			var blogDiv = $('<div/>', {
+				id: 'blog'
+			});
+
+			var blogTitle = $('<span/>', {
+				id: 'blog-title',
+				html: 'Welcome!'
+			});
+
+			var blogGeneralDescription = $('<span/>', {
+				id: 'blog-general-description',
+				html: 'What do you want to read about?'
+			});
+
+			var blogOptions = $('<ul/>', {
+				id: 'blog-options'
+			});
+
+			topicsRef.on('child_added', function(snapshot) {
+				jsonObject = snapshot.val();
+
+				var newTopicLink = $('<li/>', {
+					id: snapshot.name(),
+					class: 'blog-topic-link',
+					html: jsonObject['display-name']
+				});
+
+				newTopicLink.click(topicLinkClickCallback);
+				blogOptions.append(newTopicLink);
+			});
+
+			blogDiv.append(blogTitle);
+			blogDiv.append(blogGeneralDescription);
+			blogDiv.append(blogOptions);
+
+			blogDiv.insertAfter($('#content'));
+
+			blogShowing = true;
+		}
+
+		$('html, body').animate({
+			scrollTop: $('#blog').offset().top
+		}, 500);
+	}
+}
+
+
 function centerElements(elementsToCenter) {
 	// console.log('centering everything');
 
@@ -88,59 +143,11 @@ $(function() {
 		$('#github-link'),
 		$('#blog-link')
 	];
-	var blogShowing = false;
-	var blogEntryShowing = false;
 
 	centerElements(elementsToCenter);
 
 	$('#blog-link').click(function(event) {
 		event.preventDefault();
-
-		if (!blogShowing) {
-			var topicsRef = new Firebase('https://personal-blog.firebaseIO.com/topics/');
-
-			var blogDiv = $('<div/>', {
-				id: 'blog'
-			});
-
-			var blogTitle = $('<span/>', {
-				id: 'blog-title',
-				html: 'Welcome!'
-			});
-
-			var blogGeneralDescription = $('<span/>', {
-				id: 'blog-general-description',
-				html: 'What do you want to read about?'
-			});
-
-			var blogOptions = $('<ul/>', {
-				id: 'blog-options'
-			});
-
-			topicsRef.on('child_added', function(snapshot) {
-				jsonObject = snapshot.val();
-
-				var newTopicLink = $('<li/>', {
-					id: snapshot.name(),
-					class: 'blog-topic-link',
-					html: jsonObject['display-name']
-				});
-
-				newTopicLink.click(topicLinkClickCallback);
-				blogOptions.append(newTopicLink);
-			});
-
-			blogDiv.append(blogTitle);
-			blogDiv.append(blogGeneralDescription);
-			blogDiv.append(blogOptions);
-
-			blogDiv.insertAfter($('#content'));
-
-			blogShowing = true;
-		}
-
-		$('html, body').animate({
-			scrollTop: $('#blog').offset().top
-		}, 500);
+		blog.display();
 	});
 });
