@@ -16,4 +16,3 @@ Update (7/29/14): Time flies and it's impossible to get motivated after work. I'
 
 Created as an HTML/JS/CSS static site with the LESS precompiler. Possibly considering adding JADE into the mix.
 Uses Firebase as a database on the front-end.
-
