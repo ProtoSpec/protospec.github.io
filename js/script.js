@@ -2,53 +2,77 @@ var blog = {
 	blogShowing: false,
 	blogEntryShowing: false,
 
-	display: function() {
+	loadingImage: $('<img/>', {
+		id: 'blog-loading-gif',
+		src: 'images/loading.gif'
+	}),
+
+	createDisplayTopicsCallback: function(topicList) {
+		var topicsRef = new Firebase('https://personal-blog.firebaseIO.com/topics/');
+
+		console.log('Assigning callback for topics.');
+
+		topicsRef.on('child_added', function(snapshot) {
+			console.log('Adding ' + snapshot.name());
+			dataJSON = snapshot.val();
+
+			var newTopicLink = $('<li/>', {
+				id: snapshot.name(),
+				class: 'blog-topic-link',
+				html: dataJSON['display-name']
+			});
+
+			newTopicLink.click(topicLinkClickCallback);
+			topicList.append(newTopicLink);
+		});
+	},
+
+	createTopicsList: function() {
+		var blogTopicsList = $('<ul/>', {
+			id: 'blog-options'
+		});
+
+		blogTopicsList.append(this.loadingGif);
+
+		return blogTopicsList;
+	},
+
+	createBlogDiv: function() {
+		var blogDiv = $('<div/>', {
+			id: 'blog'
+		});
+
+		var blogTitle = $('<span/>', {
+			id: 'blog-title',
+			html: 'Welcome!'
+		});
+
+		var blogGeneralDescription = $('<span/>', {
+			id: 'blog-general-description',
+			html: 'What do you want to read about?'
+		});
+
+		blogDiv.append(blogTitle);
+		blogDiv.append(blogGeneralDescription);
+		blogDiv.append(this.createTopicsList());
+
+		return blogDiv;
+	},
+
+	displayAfter: function(preceedingDiv) {
 		if (!this.blogShowing) {
-			var topicsRef = new Firebase('https://personal-blog.firebaseIO.com/topics/');
+			var blogDiv = this.createBlogDiv();
 
-			var blogDiv = $('<div/>', {
-				id: 'blog'
-			});
+			blogDiv.insertAfter(preceedingDiv);
 
-			var blogTitle = $('<span/>', {
-				id: 'blog-title',
-				html: 'Welcome!'
-			});
-
-			var blogGeneralDescription = $('<span/>', {
-				id: 'blog-general-description',
-				html: 'What do you want to read about?'
-			});
-
-			var blogOptions = $('<ul/>', {
-				id: 'blog-options'
-			});
-
-			topicsRef.on('child_added', function(snapshot) {
-				jsonObject = snapshot.val();
-
-				var newTopicLink = $('<li/>', {
-					id: snapshot.name(),
-					class: 'blog-topic-link',
-					html: jsonObject['display-name']
-				});
-
-				newTopicLink.click(topicLinkClickCallback);
-				blogOptions.append(newTopicLink);
-			});
-
-			blogDiv.append(blogTitle);
-			blogDiv.append(blogGeneralDescription);
-			blogDiv.append(blogOptions);
-
-			blogDiv.insertAfter($('#content'));
-
-			blogShowing = true;
+			this.createDisplayTopicsCallback(blogDiv.find('#blog-options'));
 		}
 
 		$('html, body').animate({
 			scrollTop: $('#blog').offset().top
 		}, 500);
+
+		blogShowing = true;
 	}
 }
 
@@ -148,6 +172,6 @@ $(function() {
 
 	$('#blog-link').click(function(event) {
 		event.preventDefault();
-		blog.display();
+		blog.displayAfter($('#content'));
 	});
 });
