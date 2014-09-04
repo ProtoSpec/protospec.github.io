@@ -1,6 +1,6 @@
 # Bryan A. W. Jensen
 
-Github user page as my personal website.
+This is me using the Github user page as my personal website.
 
 The current state of the page is very much "I want this to be done". When I was designing it, I was working on at least two other projects that I had made up for myself, and this was being neglected, so I decided to put it in a good spot before I forgot about it for a few months.
 
