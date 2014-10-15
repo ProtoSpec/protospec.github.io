@@ -79,24 +79,21 @@ var blog = {
 
 function centerElements(elementsToCenter) {
 	// console.log('centering everything');
-
 	var transitionTime;
 
-	$.each(elementsToCenter, function() {
-		// console.log('centering' + $(this).attr('id'));
-
-		transitionTime = $(this).css('transition-duration');
-
-		$(this).css('transition-duration', '0');
-		$(this).css('margin-left', -$(this).width() / 2);
-		$(this).css('margin-top', -$(this).height() / 2);
-	});
-
-	window.setTimeout(function() {
+	var promise = Promise.resolve(
 		$.each(elementsToCenter, function() {
-			$(this).css('transition-duration', toString(transitionTime));
+			console.log('centering ' + $(this).attr('id'));
+
+			console.log('outerWidth ' + $(this).outerWidth(true));
+
+			$(this).css('margin-left', -$(this).width() / 2);
+			$(this).css('margin-top', -$(this).height() / 2);
 		})
-	}, 500);
+	).catch(function(err) {
+		console.error(err);
+		throw err;
+	});
 }
 
 function displayPost() {
@@ -158,18 +155,21 @@ function displayTopicLinkPosts(containerListItem, topicID) {
 
 }
 
+$(window).load(function() {
+	// var elementsToCenter = [
+	// 	$('#name'),
+	// 	// $('#linkedin-link'),
+	// 	// $('#resume-link'),
+	// 	// $('#github-link'),
+	// 	// $('#portfolio-link'),
+	// 	// $('#blog-link')
+	// 	$('#links')
+	// ];
+
+	// centerElements(elementsToCenter);
+});
+
 $(function() {
-
-	var elementsToCenter = [
-		$('#name'),
-		$('#linkedin-link'),
-		$('#resume-link'),
-		$('#github-link'),
-		$('#blog-link')
-	];
-
-	centerElements(elementsToCenter);
-
 	$('#blog-link').click(function(event) {
 		event.preventDefault();
 		blog.displayAfter($('#content'));

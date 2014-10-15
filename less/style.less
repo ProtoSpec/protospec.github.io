@@ -21,59 +21,61 @@ body {
 
     color: #FFFFFF;
 
-    #fullbackground {
-      position: absolute;
-      z-index: -2;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .major-link {
-      position: absolute;
-      text-decoration: none;
-      color: inherit;
-
-      font-size: 30px;
-      top: 65%;
-      opacity: 0.8;
-
-      -webkit-transition: opacity 0.2s ease;
-              transition: opacity 0.2s ease;
-    }
-
-    .major-link:hover {
-      opacity: 1.0;
-    }
-
     #name {
-      position: absolute;
-      left: 50%:
-      top: 40%;
-
       font-size: 40px;
-      top: 37%;
-      left: 50%;
       text-align: center;
       cursor: default;
+
+      padding-top: 25vh;
     }
 
-    #resume-link {
-      left: 25%;
+    #links {
+      display: table; // Because logic
+      margin: 0 auto;
+
+      padding-top: 30vh;
+
+      li {
+        display: inline;
+
+        padding: 0 40px;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+
+          font-size: 30px;
+          opacity: 0.8;
+
+          -webkit-transition: opacity 0.2s ease;
+                  transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+          opacity: 1.0;
+        }
+      }
     }
 
-    #blog-link {
-      left: 41%;
-    }
+    // #resume-link {
+    //   left: 25%;
+    // }
 
-    #github-link {
-      left: 59%;
-    }
+    // #blog-link {
+    //   left: 41%;
+    // }
 
-    #linkedin-link {
-      left: 75%;
-    }
+    // #portfolio-link {
+    //   left: 50%;
+    // }
+
+    // #github-link {
+    //   left: 59%;
+    // }
+
+    // #linkedin-link {
+    //   left: 75%;
+    // }
   }
 
   #blog {
