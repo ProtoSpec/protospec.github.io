@@ -4,7 +4,7 @@ var blog = {
 
 	loadingImage: $('<img/>', {
 		id: 'blog-loading-gif',
-		src: 'images/loading.gif'
+		src: '/images/loading.gif'
 	}),
 
 	createDisplayTopicsCallback: function(topicList) {
