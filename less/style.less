@@ -28,9 +28,38 @@ body {
     cursor: default;
     color: #FFFFFF;
 
+    padding-top: 25vh;
+
     a {
       text-decoration: none;
-      color: inherit;
+      color: #FFFFFF;
+    }
+  }
+
+  .link-list {
+    display: table; // Because logic
+    margin: 0 auto;
+
+    padding-top: 30vh;
+
+    li {
+      display: inline;
+
+      padding: 0 40px;
+
+      a {
+        color: #FFFFFF;
+
+        font-size: 30px;
+        opacity: 0.8;
+
+        -webkit-transition: opacity 0.2s ease;
+                transition: opacity 0.2s ease;
+      }
+
+      a:hover {
+        opacity: 1.0;
+      }
     }
   }
 }
