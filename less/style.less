@@ -1,7 +1,19 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
 
+.cf {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
 body {
-  background-image: url('../images/colorBackground.jpg');
+  background-image: url('../img/colorBackground.jpg');
   background-size: 100vw 100vh;
 
   font-family: Ubuntu, sans-serif;
@@ -41,6 +53,8 @@ a:hover {
     text-align: center; // Bootstrap magic?
 
     padding-top: 30vh;
+    padding-left: 0;
+
 
     li {
       display: inline;
@@ -50,16 +64,41 @@ a:hover {
   }
 
   #project-container {
+    padding-top: 10vh;
+
     #project-list {
       li {
         cursor: pointer;
         display: block;
+
+        font-size: 25px;
+
+        span {
+          font-size: 15px;
+        }
       }
     }
 
     #project-info {
-      div {
+      @padding: 20px;
+
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: @padding;
+      border-radius: 10px;
+
+      .cf;
+
+      min-height: @padding * 2 + 30px;
+
+
+      font-size: 20px;
+      & > div:not(:first-child) {
+      // & > div {
         display: none;
+      }
+
+      & > div {
+        position: absolute;
       }
     }
   }
