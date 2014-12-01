@@ -5,6 +5,21 @@ body {
   background-size: 100vw 100vh;
 
   font-family: Ubuntu, sans-serif;
+
+  color: white;
+}
+
+a {
+  color: inherit;
+  opacity: 0.8;
+}
+
+a:hover {
+  color: inherit;
+  opacity: 1.0;
+
+  -webkit-transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease;
 }
 
 #content {
@@ -29,21 +44,22 @@ body {
 
     li {
       display: inline;
-
       padding: 0 40px;
+      font-size: 30px;
+    }
+  }
 
-      a {
-        color: #FFFFFF;
-
-        font-size: 30px;
-        opacity: 0.8;
-
-        -webkit-transition: opacity 0.2s ease;
-                transition: opacity 0.2s ease;
+  #project-container {
+    #project-list {
+      li {
+        cursor: pointer;
+        display: block;
       }
+    }
 
-      a:hover {
-        opacity: 1.0;
+    #project-info {
+      div {
+        display: none;
       }
     }
   }

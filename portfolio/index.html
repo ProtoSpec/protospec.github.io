@@ -12,20 +12,35 @@
 </head>
 
 <body>
-    <div id="content">
+    <div id="content" class="container">
         <div class="row" id="name">
             <div class="col-xs-12">
                 <a href="/">Bryan Alexander William Jensen</a>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <ul id="project-list" class="link-list">
-                    <li><a target="_blank" href="http://whale.wheatoncollege.edu/wave">WAVE Course Schedule</a></li>
-                    <li><a target="_blank" href="http://lexos.wheatoncollege.edu/upload">Lexos</a></li>
-                    <li><a target="_blank" href="http://whale.wheatoncollege.edu/github">GitHub Competition</a></li>
+        <div id="project-container" class="row">
+            <div id="project-list" class="col-xs-3">
+                <ul>
+                    <li id="wave">
+                        WAVE Course Schedule
+                        <a target="_blank" href="http://whale.wheatoncollege.edu/wave"><span class="glyphicon glyphicon-new-window"></span></a>
+                    </li>
+                    <li id="lexos">
+                        Lexos
+                        <a target="_blank" href="http://lexos.wheatoncollege.edu/upload"><span class="glyphicon glyphicon-new-window"></span></a>
+                    </li>
+                    <li id="github">
+                        GitHub Competition
+                        <a target="_blank" href="http://whale.wheatoncollege.edu/github"><span class="glyphicon glyphicon-new-window"></span></a>
+                    </li>
                 </ul>
+            </div>
+            <div id="project-info" class="col-xs-9">
+                <div id="wave-info">
+                    <p>WAVE is a re-imagining of the current Wheaton College (MA) course schedule, using modern browser technologies, etc.</p>
+                    <img src="/img/wave-ss.png" alt="WAVE Course Schedule Screenshot">
+                </div>
             </div>
         </div>
     </div>
