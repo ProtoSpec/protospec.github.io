@@ -1,6 +1,6 @@
 var CURRENT_ROUTE = window.location.pathname;
 
-if (CURRENT_ROUTE == '/portfolio/') {
+if (CURRENT_ROUTE.match('portfolio')) {
     $(function() {
         $('#project-list li').click(function() {
             var targetId = $(this).attr('id');
@@ -13,5 +13,3 @@ if (CURRENT_ROUTE == '/portfolio/') {
         });
     });
 }
-
-console.log(CURRENT_ROUTE);
