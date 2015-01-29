@@ -12,6 +12,8 @@
   }
 }
 
+// ==================================== General Stuff ================================
+
 body {
   background-image: url('../img/colorBackground.jpg');
   background-size: 100vw 100vh;
@@ -34,6 +36,7 @@ a:hover {
           transition: opacity 0.2s ease;
 }
 
+// ==================================== Front page ===================================
 #content {
   #name {
     font-size: 40px;
@@ -62,44 +65,47 @@ a:hover {
       font-size: 30px;
     }
   }
+}
 
-  #project-container {
-    padding-top: 10vh;
+// ==================================== Portfolio ====================================
 
-    #project-list {
-      li {
-        cursor: pointer;
-        display: block;
 
-        font-size: 25px;
+#project-container {
+  padding-top: 10vh;
 
-        span {
-          font-size: 15px;
-        }
+  #project-list {
+    li {
+      cursor: pointer;
+      display: block;
+
+      font-size: 25px;
+
+      span {
+        font-size: 15px;
       }
     }
+  }
 
-    #project-info {
-      @padding: 20px;
+  #project-info {
+    @padding: 20px;
 
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: @padding;
-      border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: @padding;
+    border-radius: 10px;
 
-      .cf;
+    .cf;
 
-      min-height: @padding * 2 + 30px;
+    min-height: @padding * 2 + 30px;
 
 
-      font-size: 20px;
-      & > div:not(:first-child) {
-      // & > div {
-        display: none;
-      }
+    font-size: 20px;
+    & > div:not(:first-child) {
+    // & > div {
+      display: none;
+    }
 
-      & > div {
-        position: absolute;
-      }
+    & > div {
+      position: absolute;
     }
   }
 }
