@@ -60,11 +60,30 @@ function handleHashChange() {
 // ------------------------------------ Other scripts --------------------------------
 
 function initializeMainPage() {
-    window.onhashchange = handleHashChange;
+    $(document).on('click', '.state-transition', function(evt) {
+        var transitionId = $(this).attr('id');
 
-    if (location.hash) handleHashChange();
+        if (transitionId in blog.state.transitions) {
+            blog.state.transitions[transitionId]();
+        }
+    });
 
-    blog.state = null;
+    var topics = new Firebase("https://personal-blog.firebaseio.com/");
+
+    topics.on("value", function(data) {
+        var topicsObj = data.val() ? data.val().topics : {};
+
+        blog.state = {
+            transitions: {}
+        };
+
+        for (var topic in topicsObj) {
+            blog.state.transitions[topic] = function() {
+            };
+        }
+
+        console.log(template({ topicsObj: topicsObj }));
+    });
 }
 
 // ==================================== OnLoad scripts ===============================
