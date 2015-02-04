@@ -1,6 +1,5 @@
 var CURRENT_ROUTE = window.location.pathname;
 
-
 // ==================================== Portfolio scripts ============================
 
 function initializePortfolio() {
@@ -17,8 +16,6 @@ function initializePortfolio() {
 
 // ==================================== Main page scripts ============================
 
-// ------------------------------------ Blog scripts ---------------------------------
-
 /*
 
 Blog structure:
@@ -30,41 +27,14 @@ Blog
 */
 
 var blog = {};
-function BlogState() {
-    this.possibleTransitions = [];
 
-    this.possibleTransitions.push({
-        transition: function() {
-
-        },
-        destination: null
-    });
-}
-
-blog.handle = function(subRoute) {
-    console.log(subRoute);
-}
-
-function handleHashChange() {
-    var newHash = location.hash;
-
-    newHash = newHash.replace(/^#/, '');
-
-    var hashParts = newHash.split('/');
-
-    if (hashParts[0] == 'blog') {
-        blog.handle(hashParts.slice(1).join('/'));
-    }
-}
-
-// ------------------------------------ Other scripts --------------------------------
-
+var blogContainerId = 'blog-container';
 function initializeMainPage() {
     $(document).on('click', '.state-transition', function(evt) {
-        var transitionId = $(this).attr('id');
+        var transitionId = $(this).data('state');
 
         if (transitionId in blog.state.transitions) {
-            blog.state.transitions[transitionId]();
+            blog.state.transitions[transitionId](evt);
         }
     });
 
@@ -73,16 +43,91 @@ function initializeMainPage() {
     topics.on("value", function(data) {
         var topicsObj = data.val() ? data.val().topics : {};
 
-        blog.state = {
-            transitions: {}
-        };
+        var topicLinksTemplate = blogTemplate({ topicsObj: topicsObj });
 
-        for (var topic in topicsObj) {
-            blog.state.transitions[topic] = function() {
-            };
+        var topicHtmls = {};
+        for (var key in topicsObj) {
+            topicHtmls[key] = topicTemplate({ topic: topicsObj[key] });
         }
 
-        console.log(template({ topicsObj: topicsObj }));
+        console.log(topicsObj);
+
+        blog.structure = {
+            states: {
+                'first': {
+                    transitions: {
+                        'intro': function(evt) {
+                            // console.log('yay');
+                            var newDiv = $('<div>', {
+                                html: topicLinksTemplate,
+                                id: blogContainerId
+                            });
+
+                            newDiv.appendTo('#content');
+
+                            $('html, body').animate({
+                                scrollTop: newDiv.offset().top
+                            }, 250);
+
+                            blog.state = blog.structure.states.second;
+                        }
+                    }
+                },
+                'second': {
+                    transitions: {
+                        'intro': function(evt) {
+                            $('html, body').animate({
+                                scrollTop: $('#' + blogContainerId).offset().top
+                            }, 250);
+                        },
+                        'topic': function(evt) {
+                            var newDiv = $('<div>', {
+                               html: topicHtmls[evt.target.id],
+                               id: 'posts'
+                            });
+
+                            var topics = $('#topics-container');
+
+                            topics.animate({
+                                marginLeft: 0,
+                                marginRight: 0
+                            }, 500, function after() {
+                                topics.css('float', 'left');
+                                newDiv.appendTo($('#' + blogContainerId));
+                            });
+
+                            blog.state = blog.structure.states.third;
+                        }
+                    }
+                },
+                'third': {
+                    transitions: {
+                        'intro': function(evt) {
+                            $('html, body').animate({
+                                scrollTop: $('#' + blogContainerId).offset().top
+                            }, 250);
+                        },
+                        'topic': function(evt) {
+                            var newDiv = $('<div>', {
+                                html: topicHtmls[evt.target.id],
+                                id: 'posts'
+                            });
+
+                            $('#posts').replaceWith(newDiv);
+                        }
+                    }
+                }
+            }
+        };
+
+        // for 
+
+        blog.state = blog.structure.states.first;
+
+        // for (var topic in topicsObj) {
+        //     blog.state.transitions[topic] = function() {
+        //     };
+        // }
     });
 }
 

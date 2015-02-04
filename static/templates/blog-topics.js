@@ -2,24 +2,24 @@ function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var locals_ = (locals || {}),topicsObj = locals_.topicsObj;
-buf.push("<ul>");
+buf.push("<ul id=\"topics-container\">");
 // iterate topicsObj
 ;(function(){
   var $$obj = topicsObj;
   if ('number' == typeof $$obj.length) {
 
-    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-      var topic = $$obj[$index];
+    for (var topicName = 0, $$l = $$obj.length; topicName < $$l; topicName++) {
+      var topic = $$obj[topicName];
 
-buf.push("<li>" + (jade.escape(null == (jade.interp = topic.displayName) ? "" : jade.interp)) + "</li>");
+buf.push("<li data-state=\"topic\"" + (jade.attr("id", topicName, true, false)) + " class=\"state-transition\">" + (jade.escape(null == (jade.interp = topic.displayName) ? "" : jade.interp)) + "</li>");
     }
 
   } else {
     var $$l = 0;
-    for (var $index in $$obj) {
-      $$l++;      var topic = $$obj[$index];
+    for (var topicName in $$obj) {
+      $$l++;      var topic = $$obj[topicName];
 
-buf.push("<li>" + (jade.escape(null == (jade.interp = topic.displayName) ? "" : jade.interp)) + "</li>");
+buf.push("<li data-state=\"topic\"" + (jade.attr("id", topicName, true, false)) + " class=\"state-transition\">" + (jade.escape(null == (jade.interp = topic.displayName) ? "" : jade.interp)) + "</li>");
     }
 
   }

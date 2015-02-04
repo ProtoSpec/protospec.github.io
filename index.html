@@ -3,26 +3,35 @@ layout: default
 ---
     <script type="text/javascript" src="/static/js/jade-templates.js"></script>
     <script type="text/javascript" src="/static/templates/blog-topics.js"></script>
+    <script type="text/javascript">
+        var blogTemplate = template;
+    </script>
+    <script type="text/javascript" src="/static/templates/topic-posts.js"></script>
+    <script type="text/javascript">
+        var topicTemplate = template;
+    </script>
 </head>
 
 <body>
     <div id="content" class="container">
-        <div class="row" id="name">
-            <div class="col-xs-12">
-                <a href="/">Bryan Alexander William Jensen</a>
+        <div id="main-page-container" class="row">
+            <div class="row" id="name">
+                <div class="col-xs-12">
+                    <a href="/">Bryan Alexander William Jensen</a>
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <ul id="links" class="link-list">
-                    <li><a target="_blank" id="linkedin-link" href="http://www.linkedin.com/pub/bryan-jensen/84/a7a/246">LinkedIn</a></li>
-                    <li><a target="_blank" id="resume-link" href="Jensen_Bryan-Resume.pdf">Resume</a></li>
-                    <li><a target="_blank" id="github-link" href="https://github.com/bawjensen">GitHub</a></li>
-                    <li><a id="portfolio-link" href="/portfolio/">Portfolio</a></li>
-                    <li><a id="blog-link" class="state-transition" href="/#blog/">Blog</a></li>
-                    <!-- {{ site.time | date_to_xmlschema }} -->
-                </ul>
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul id="links" class="link-list">
+                        <li><a target="_blank" id="linkedin-link" href="http://www.linkedin.com/pub/bryan-jensen/84/a7a/246">LinkedIn</a></li>
+                        <li><a target="_blank" id="resume-link" href="Jensen_Bryan-Resume.pdf">Resume</a></li>
+                        <li><a target="_blank" id="github-link" href="https://github.com/bawjensen">GitHub</a></li>
+                        <li><a id="portfolio-link" href="/portfolio/">Portfolio</a></li>
+                        <li><a id="blog-link" class="state-transition" data-state="intro" href="/#blog">Blog</a></li>
+                        <!-- {{ site.time | date_to_xmlschema }} -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

@@ -1,3 +1,6 @@
-ul
-  each topic in topicsObj
-    li= topic.displayName
+if topic.posts
+  each post in topic.posts
+    h1= post.title
+    p= post.preview
+else
+  |There's nothing here!
