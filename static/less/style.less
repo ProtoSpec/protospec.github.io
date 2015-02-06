@@ -86,7 +86,14 @@ a {
   cursor: pointer;
 }
 
+@full-width: 970px;
+@topics-width: 400px;
+@post-width: @full-width - @topics-width;
+
 #blog-container {
+  .cf;
+
+  padding-top: 100px;
   min-height: 100vh;
 
   background-color: rgba(0, 0, 0, 0.5);
@@ -96,15 +103,42 @@ a {
     margin: 0 auto;
     padding: 0;
 
+    width: @topics-width;
+
     font-size: 30px;
+    text-align: center;
 
     li {
       display: block;
+
+      box-shadow: 0px 0px 4px 2px white;
+      margin: 10px;
     }
   }
 
   #posts {
     float: right;
+    // width: @post-width;
+    width: 800px;
+    margin-right: 20px;
+
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    color: black;
+
+    p {
+      text-align: left;
+    }
+
+    .preview {
+
+    }
+
+    .text {
+      display: none;
+    }
   }
 }
 

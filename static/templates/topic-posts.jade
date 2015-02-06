@@ -1,6 +1,8 @@
 if topic.posts
   each post in topic.posts
-    h1= post.title
-    p= post.preview
+    div.post
+      h1.state-transition(data-state='post')= post.title
+      .preview!= post.preview + '...'
+      .text!= post.text
 else
   |There's nothing here!

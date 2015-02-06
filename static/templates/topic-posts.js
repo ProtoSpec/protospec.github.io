@@ -12,7 +12,7 @@ if ( topic.posts)
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var post = $$obj[$index];
 
-buf.push("<h1>" + (jade.escape(null == (jade.interp = post.title) ? "" : jade.interp)) + "</h1><p>" + (jade.escape(null == (jade.interp = post.preview) ? "" : jade.interp)) + "</p>");
+buf.push("<div class=\"post\"><h1 data-state=\"post\" class=\"state-transition\">" + (jade.escape(null == (jade.interp = post.title) ? "" : jade.interp)) + "</h1><div class=\"preview\">" + (null == (jade.interp = post.preview + '...') ? "" : jade.interp) + "</div><div class=\"text\">" + (null == (jade.interp = post.text) ? "" : jade.interp) + "</div></div>");
     }
 
   } else {
@@ -20,7 +20,7 @@ buf.push("<h1>" + (jade.escape(null == (jade.interp = post.title) ? "" : jade.in
     for (var $index in $$obj) {
       $$l++;      var post = $$obj[$index];
 
-buf.push("<h1>" + (jade.escape(null == (jade.interp = post.title) ? "" : jade.interp)) + "</h1><p>" + (jade.escape(null == (jade.interp = post.preview) ? "" : jade.interp)) + "</p>");
+buf.push("<div class=\"post\"><h1 data-state=\"post\" class=\"state-transition\">" + (jade.escape(null == (jade.interp = post.title) ? "" : jade.interp)) + "</h1><div class=\"preview\">" + (null == (jade.interp = post.preview + '...') ? "" : jade.interp) + "</div><div class=\"text\">" + (null == (jade.interp = post.text) ? "" : jade.interp) + "</div></div>");
     }
 
   }
