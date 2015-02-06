@@ -24,7 +24,7 @@ fs.readdir(initialDir, function(err, subDirectories) {
     for (var i in subDirectories) {
         var topicSubDir = subDirectories[i];
 
-        fs.stat(topicSubDir, function(err, stats) {
+        fs.stat(topicSubDir, (function(topicSubDir, err, stats) {
             if (err) throw err;
 
             if (stats.isDirectory()) {
@@ -36,25 +36,29 @@ fs.readdir(initialDir, function(err, subDirectories) {
                         var fileExt = path.extname(file);
                         var fileBase = path.basename(file, fileExt);
 
-                        if (fileExt === '.md') {
-                            console.log(file);
+                        console.log(path.join(newDir, file));
 
+                        if (fileExt === '.md') {
                             fs.readFile(path.join(newDir, file), 'utf8', function(err, mdFile) {
                                 if (err) throw err;
 
-                                var topic = fb.child('topics/' + topicSubDir);
                                 var html = marked(mdFile);
 
-                                topic.child('posts').push({
+                                var topic = fb.child('topics').child(topicSubDir)
+
+                                topic.child('posts').child(fileBase).set({
                                     title: fileBase,
                                     text: html,
                                     preview: html.slice(0, 200)
                                 });
                             });
                         }
+                        else {
+                            console.log('Nope');
+                        }
                     }
                 });
             }
-        });
+        }).bind(null, topicSubDir));
     }
 });

@@ -85,6 +85,11 @@ function initializeMainPage() {
 
                         var topics = $('#topics-container');
 
+                        // Manually set the margin, make it floated, and display block (removes funkiness with animation)
+                        topics.css('margin-left', topics.css('margin-left'));
+                        topics.css('float', 'left');
+                        topics.css('display', 'block');
+
                         topics.animate({
                             marginLeft: 40,
                             marginRight: 40,
@@ -92,8 +97,9 @@ function initializeMainPage() {
                             borderRightColor: 'white',
                             borderRightWidth: 1,
                             width: 200
-                        }, 350, function after() {
-                            topics.css('float', 'left');
+                        }, 500, function after() {
+                            topics.css('line-height', topics.css('line-height'));
+                            topics.css('font-size', '20px');
                             newDiv.appendTo($('#' + blogContainerId));
                         });
 
