@@ -5,7 +5,7 @@ Portfolio entries (order irrelevant):
 + Book Exchange
 + GitHub competition
 + WAVE
-+ ~~Knexus Work~~ Not until the paper is published
++ Knexus Work
 + Lexos
 + Leap Motion Rubik's Cube
 + Neural Net 2048
