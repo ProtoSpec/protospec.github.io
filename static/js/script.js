@@ -26,10 +26,9 @@ Blog
 
 */
 
-var blogContainerId = 'blog-container';
 function scrollToBlog() {
     $('html, body').animate({
-        scrollTop: $('#' + blogContainerId).offset().top
+        scrollTop: $('#blog-container').offset().top
     }, 250);
 }
 
@@ -54,19 +53,15 @@ function initializeMainPage() {
         var topicHtmls = {};
         for (var key in topicsObj) {
             topicHtmls[key] = topicTemplate({ topic: topicsObj[key] });
-            console.log(topicHtmls[key]);
         }
 
         blog.layers = {
             'first': {
                 transitions: {
                     'intro': function(evt) {
-                        var newDiv = $('<div>', {
-                            html: topicLinksTemplate,
-                            id: blogContainerId
-                        });
+                        var $newDiv = $($.parseHTML(topicLinksTemplate));
 
-                        newDiv.appendTo('#content');
+                        $newDiv.appendTo('#content');
 
                         scrollToBlog();
 
@@ -76,12 +71,13 @@ function initializeMainPage() {
             },
             'second': {
                 transitions: {
+                    'home': function(evt) {
+                        $('#blog-container').remove();
+                        blog.state = blog.layers.first;
+                    },
                     'intro': scrollToBlog,
                     'topic': function(evt) {
-                        var newDiv = $('<div>', {
-                           html: topicHtmls[evt.target.id],
-                           id: 'posts'
-                        });
+                        var $newDiv = $($.parseHTML(topicHtmls[evt.target.id]));
 
                         var topics = $('#topics-container');
 
@@ -93,14 +89,14 @@ function initializeMainPage() {
                         topics.animate({
                             marginLeft: 40,
                             marginRight: 40,
-                            fontSize: 30,
-                            borderRightColor: 'white',
-                            borderRightWidth: 1,
+                            // fontSize: 30,
+                            // borderRightColor: 'white',
+                            // borderRightWidth: 1,
                             width: 200
-                        }, 500, function after() {
-                            topics.css('line-height', topics.css('line-height'));
-                            topics.css('font-size', '20px');
-                            newDiv.appendTo($('#' + blogContainerId));
+                        }, 250, function after() {
+                            // topics.css('line-height', topics.css('line-height'));
+                            // topics.css('font-size', '20px');
+                            $newDiv.appendTo($('#blog-container'));
                         });
 
                         blog.state = blog.layers.third;
@@ -109,47 +105,63 @@ function initializeMainPage() {
             },
             'third': {
                 transitions: {
+                    'home': function(evt) {
+                        $('#blog-container').remove();
+                        blog.state = blog.layers.first;
+                    },
                     'intro': scrollToBlog,
                     'topic': function(evt) {
-                        var newDiv = $('<div>', {
-                            html: topicHtmls[evt.target.id],
-                            id: 'posts'
-                        });
+                        var $newDiv = $($.parseHTML(topicHtmls[evt.target.id]));
 
-                        $('#posts').replaceWith(newDiv);
+                        $('#posts').replaceWith($newDiv);
                     },
                     'post': function(evt) {
                         var $clicked = $(evt.target);
 
-                        $clicked.siblings('.preview, .text').toggle();
+                        $clicked.closest('.post').find('.preview, .text').toggle();
 
                         blog.state = blog.layers.fourth;
                         blog.state.$showing = $clicked;
+                    },
+                    'close': function(evt) {
+                        $('#posts').remove();
+                        $('#topics-container').attr('style', '');
+                        blog.state = blog.layers.second;
                     }
                 }
             },
             'fourth': {
                 transitions: {
+                    'home': function(evt) {
+                        $('#blog-container').remove();
+                        blog.state = blog.layers.first;
+                    },
                     'intro': scrollToBlog,
                     'topic': function(evt) {
+                        var $newDiv = $($.parseHTML(topicHtmls[evt.target.id]));
 
+                        $('#posts').replaceWith($newDiv);
                     },
                     'post': function(evt) {
-                        var $clicked = $(evt.target);
+                        var $clicked = $(evt.target).closest('.post');
 
-                        $clicked.siblings('.preview, .text').toggle();
+                        $clicked.find('.preview, .text').toggle();
 
                         if (blog.state.$showing && ($clicked[0] == blog.state.$showing[0])) {
-                            console.log('Going back to third');
                             blog.state = blog.layers.third;
                         }
                         else if (blog.state.$showing) {
-                            blog.state.$showing.siblings('.preview, .text').toggle();
+                            blog.state.$showing.find('.preview, .text').toggle();
                             blog.state.$showing = $clicked;
                         }
                         else {
                             blog.state.$showing = $clicked;
                         }
+                    },
+                    'close': function(evt) {
+                        $('#posts').remove();
+                        $('#topics-container').attr('style', '');
+                        blog.state = blog.layers.second;
                     }
                 },
                 $showing: null

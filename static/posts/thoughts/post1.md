@@ -1,4 +1,4 @@
-# Lorem Ipsum
+# Thoughts
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus efficitur dapibus. Mauris iaculis vehicula suscipit. Nam mollis turpis placerat tempus viverra. Aenean iaculis mi sit amet posuere volutpat. Pellentesque eget euismod lorem. Quisque vestibulum consequat purus ut congue. Cras sit amet enim eget ipsum finibus imperdiet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Quisque feugiat porttitor elit.
 

@@ -98,6 +98,17 @@ a {
 
   background-color: rgba(0, 0, 0, 0.5);
 
+  position: relative;
+
+  #back-home {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    // float: left;
+    margin: 10px;
+    cursor: pointer;
+  }
+
   #topics-container {
     display: table;
     margin: 0 auto;
@@ -122,26 +133,47 @@ a {
 
   #posts {
     float: right;
-    // width: @post-width;
     width: 800px;
     margin-right: 20px;
 
-    text-align: center;
-
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
     color: black;
 
-    p {
-      text-align: left;
+    #close-topic {
+      font-size: 20px;
+      margin: 10px;
+      float: right;
+      cursor: pointer;
     }
 
-    .preview {
+    .post {
+      padding: 30px;
+      text-align: center;
 
-    }
+      p {
+        text-align: left;
+      }
 
-    .text {
-      display: none;
+      .show-less,
+      .show-more {
+        color: blue;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      .show-less,
+      .show-less-placeholder {
+        display: block;
+        text-align: center;
+        min-height: 20px;
+        margin-bottom: -20px; // Holds place, but doesn't take space
+      }
+
+      .text {
+        display: none;
+      }
     }
   }
 }

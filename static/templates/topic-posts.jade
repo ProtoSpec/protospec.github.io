@@ -1,8 +1,14 @@
-if topic.posts
-  each post in topic.posts
-    div.post
-      h1.state-transition(data-state='post')= post.title
-      .preview!= post.preview + '...'
-      .text!= post.text
-else
-  |There's nothing here!
+#posts
+  span.glyphicon.glyphicon-remove-sign.state-transition#close-topic(data-state='close')
+  if topic.posts
+    each post in topic.posts
+      .post
+        .preview
+          span.show-less-placeholder
+          != post.preview + '...'
+          span.show-more.state-transition(data-state='post') (more)
+        .text
+          span.show-less.state-transition(data-state='post') (less)
+          != post.text
+  else
+    |There's nothing here!
