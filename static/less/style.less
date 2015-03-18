@@ -107,16 +107,16 @@ a {
   }
 
   #project-info {
+    .cf;
+
     @padding: 20px;
 
     background-color: rgba(0, 0, 0, 0.5);
     padding: @padding;
-    border-radius: 10px;
-
-    .cf;
 
     min-height: @padding * 2 + 30px;
 
+    border-radius: 10px;
 
     font-size: 16px;
     & > div:not(:first-child) {
@@ -126,6 +126,14 @@ a {
 
     & > div {
       position: absolute;
+    }
+
+    .project-sshot {
+      height: 350px;
+    }
+
+    .project-text {
+      margin-bottom: 10px;
     }
   }
 }
