@@ -47,12 +47,16 @@ Slides:
         - Target
         - Home Depot
 + How the system works
-    * Bitcoins are spent by "signing" away in a transaction
-        - Public-key cryptosystem
-        - This is the only real use of cryptography in the Bitcoin system
+    * Bitcoin accomplishes security through massively public cross-checking, nothing is encrypted
+    * Bitcoin is based on public key digital signatures and hashes
+        - The bitcoins themselves are associated with a private key used for digital signatures
+            + This key is required to "spend" the bitcoin
+        - Hashes are used for the "security" of the system
+    * In order to spend bitcoins, one must "sign" the transaction with their private key
         - Bitcoins are "owned" by a private key, lose that and you lose the coins
-            + Usually, people use their phone or something to remember their private key, and don't memorize it
-    * How new bitcoins are created
+            + Thus, people get digital or physical bitcoin "wallets"
+            + Usually, people use their phone as the wallet to remember their private key, and don't memorize it
+    * Hashing is "mining" and is how new bitcoins are created, to ensure the security of the system
         - Usually, gov't prints new bills
         - "Mining" - we'll get back to this
 + Issues
