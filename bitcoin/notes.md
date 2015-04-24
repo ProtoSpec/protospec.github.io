@@ -1,4 +1,4 @@
-MATH-398: Advanced Cryptography
+    MATH-398: Advanced Cryptography
 Bryan Jensen
 April 5, 2015
 
