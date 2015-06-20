@@ -4,7 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.home',
-  'myApp.portfolio'
+  'myApp.portfolio',
+  'myApp.resume'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/'});

@@ -1,2 +1,8 @@
 # OSX Files
 .DS_Store
+
+# Node modules
+node_modules/
+
+# Bower stuff
+bower_components/
