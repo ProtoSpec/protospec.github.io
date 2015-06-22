@@ -1,0 +1,10 @@
+<div ng-repeat="entry in entries | filter: { id: entryId }"> <!-- This will only grab one entry, and thus one div -->
+    <h1>{{entry.label}}</h1>
+
+    <p>{{entry.desc ? entry.desc : 'Coming Soon!'}}</p>
+
+    <div ng-switch="!!entry.externalUrl">
+        <a ng-href="{{entry.externalUrl}}" ng-switch-when="true"><img ng-src="{{entry.imgUrl}}"></a>
+        <img ng-switch-when="false" ng-src="{{entry.imgUrl}}">
+    </div>
+</div>

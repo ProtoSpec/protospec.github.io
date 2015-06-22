@@ -1,0 +1,14 @@
+<h3>Portfolio Entries</h3>
+
+<div id="portfolio-sidebar">
+  <ul>
+    <li ng-repeat="entry in entries">
+      <a ui-sref="portfolio.detail({ entryId: entry.id })">{{ entry.label }}</a>
+    </li>
+    <li>
+      <a ui-sref="portfolio">(Clear)</a>
+    </li>
+  </ul>
+</div>
+
+<div id="portfolio-detail" ui-view></div>

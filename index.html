@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="personalSite" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="personalSite" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="personalSite" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="personalSite" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,16 +25,14 @@
     <h1><a href="/#/">Bryan Alexander William Jensen</a></h1>
   </div>
 
-  <div ng-view></div>
+  <!-- <div ng-view></div> -->
+  <div ui-view></div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script> -->
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="home/home.js"></script>
-  <script src="portfolio/portfolio.js"></script>
-  <script src="resume/resume.js"></script>
+  <!-- <script src="bower_components/angular-route/angular-route.js"></script> -->
+  <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
