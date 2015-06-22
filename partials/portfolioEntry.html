@@ -1,5 +1,6 @@
 <div ng-repeat="entry in entries | filter: { id: entryId }"> <!-- This will only grab one entry, and thus one div -->
-    <h1>{{entry.label}}</h1>
+    <h1 class="entry-label">{{entry.label}}</h1>
+    <a ng-if="!!entry.externalUrl" href="{{entry.externalUrl}}" class="glyphicon glyphicon-new-window entry-link"></a>
 
     <p>{{entry.desc ? entry.desc : 'Coming Soon!'}}</p>
 

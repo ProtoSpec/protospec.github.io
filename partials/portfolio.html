@@ -1,14 +1,13 @@
-<h3>Portfolio Entries</h3>
+<a ui-sref="portfolio"><h3>Portfolio Entries</h3></a>
 
-<div id="portfolio-sidebar">
+<div id="portfolio-sidebar" class="col-xs-12 col-sm-3">
   <ul>
     <li ng-repeat="entry in entries">
       <a ui-sref="portfolio.detail({ entryId: entry.id })">{{ entry.label }}</a>
+      <a ng-if="!!entry.externalUrl" href="{{entry.externalUrl}}" class="glyphicon glyphicon-new-window entry-link"></a>
     </li>
-    <li>
-      <a ui-sref="portfolio">(Clear)</a>
-    </li>
+    <!-- <li><a ui-sref="portfolio">(Clear)</a></li> -->
   </ul>
 </div>
 
-<div id="portfolio-detail" ui-view></div>
+<div id="portfolio-detail" class="col-xs-12 col-sm-9" ui-view></div>
