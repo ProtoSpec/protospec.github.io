@@ -4,7 +4,7 @@
   <ul>
     <li ng-repeat="entry in entries">
       <a ui-sref="portfolio.detail({ entryId: entry.id })">{{ entry.label }}</a>
-      <a ng-if="!!entry.externalUrl" href="{{entry.externalUrl}}" class="glyphicon glyphicon-new-window entry-link"></a>
+      <a ng-if="!!entry.externalUrl" href="{{entry.externalUrl}}" target="_blank" class="glyphicon glyphicon-new-window entry-link"></a>
     </li>
     <!-- <li><a ui-sref="portfolio">(Clear)</a></li> -->
   </ul>
