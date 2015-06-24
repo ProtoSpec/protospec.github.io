@@ -1,57 +1,58 @@
 [
   {
+    "id": "lexos",
+    "label": "Lexos",
+    "desc": "I was part of a team, which I ended up being the lead for, building the Lexos online suite of tools. Lexos includes tools for preparation, visualization and analysis of humanities texts, applying computer science and machine learning to gather information.",
+    "imgUrl": "/img/lexos-preview.png",
+    "externalUrl": "http://lexos.wheatoncollege.edu/upload"
+  },
+  {
     "id": "wave",
     "label": "WAVE Course Schedule",
-    "desc": "Wave is a re-imagining of the current Wheaton College (MA) course schedule, providing a vastly improved user experience.",
+    "desc": "After getting tired of Wheaton's existing course schedule, I took the time to rebuild it from scratch, making it mobile-friendly and all that jazz.",
     "imgUrl": "/img/wave-preview.png",
     "externalUrl": "http://whale.wheatoncollege.edu/wave"
   },
   {
+    "id": "knexus",
+    "label": "Knexus Work",
+    "desc": "I worked for Knexus Research Corporation on a project from the Naval Research Lab, working on a project to create the brain for a UAV. My job was to integrate a simulator we had access to, for internal use as a state prediction system used to evaluate plans.",
+    "imgUrl": "/img/knexus-preview.png",
+    "externalUrl": ""
+  },
+  {
     "id": "buildsandskills",
     "label": "BuildsAndSkills",
-    "desc": "A fun project in my spare time, this site shows a player everything they need to know for playing a given champion in League of Legends, on one page. Priority is given to clarity over added functionality, making for a quick and simple user experience.",
-    "imgUrl": "/img/lol-site-preview.png",
+    "desc": "This was a fun project in my spare time. I built a site that shows a player everything they need to know for playing a given champion in League of Legends, on one page. Priority is given to clarity over added functionality, making for a quick and simple user experience.",
+    "imgUrl": "/img/buildsAndSkills-preview.png",
     "externalUrl": "http://buildsandskills.com/"
   },
   {
     "id": "github",
     "label": "GitHub Competition",
-    "desc": "As an attempt at inspiring fellow classmates to code more often, this page makes a game out of GitHub's commit tracking feature, seeing how many days in a row people can remember to contribute to some repo hosted on GitHub.",
+    "desc": "I tried to create some friendly competitive spirit in my classmates by making a web page to track how many days in a row they could code and get GitHub commits.",
     "imgUrl": "/img/github-preview.png",
     "externalUrl": "http://whale.wheatoncollege.edu/github"
   },
   {
-    "id": "lexos",
-    "label": "Lexos",
-    "desc": "Lexos is a online suite of tools for analyzing humanities texts using computer science. Such texts include as Shakespeare, Beowulf, etc. Lexos is used worldwide.",
-    "imgUrl": "/img/lexos-preview.png",
-    "externalUrl": "http://lexos.wheatoncollege.edu/upload"
-  },
-  {
     "id": "leapmotion",
     "label": "Leap Motion Rubik's Cube",
-    "desc": "A project for an experimental course, we decided to use the Leap Motion Controller's uniqueness to its advantage, leveraging it to manipulate a 3D virtual Rubik's Cube.",
-    "imgUrl": "/img/rubiks-leap-preview.png",
+    "desc": "As part of a college course we created an application for the Leap Motion Controller. Since we really wanted to create something that utilized the Leap Motion's unique capabilities, we chose to create an environment in which someone could manipulate and solve a Rubik's Cube, with the added ability of teaching the user as they went.",
+    "imgUrl": "/img/rubiksLeap-preview.png",
     "externalUrl": ""
   },
   {
     "id": "bookexchange",
     "label": "Book Exchange",
-    "desc": "",
-    "imgUrl": "",
-    "externalUrl": ""
-  },
-  {
-    "id": "knexus",
-    "label": "Knexus Work",
-    "desc": "",
-    "imgUrl": ""
+    "desc": "A short lived personal project in my spare time, I created a website to replace what was simply a facebook page as the place to exchange stuff, e.g. textbooks, especially at the end of semesters. Since such websites rely very heavily on momentum to succeed, I realized quickly that the site would be more reliant on my marketing skills than my development skills, which aren't what I was aiming to improve.",
+    "imgUrl": "/img/bookExchange-preview.png",
+    "externalUrl": "http://wubex.herokuapp.com/"
   },
   {
     "id": "neuralnets",
     "label": "Neural Net 2048",
-    "desc": "",
-    "imgUrl": "",
+    "desc": "Over the course of my last year at college, I took part in a customized independent research course studying artificial neural networks (ANNs). This was a primarily implementation and conceptual learning experience, focusing less on the current research in the field of ANNs, and more on functionally how they perform and accomplish tasks. I ended up testing them on the game 2048, given its simplicity to implement and how easily it converts as input for a neural net.",
+    "imgUrl": "/img/ann-preview.png",
     "externalUrl": ""
   }
 ]
