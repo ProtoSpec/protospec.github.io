@@ -3,7 +3,7 @@
 <div id="portfolio-sidebar" class="col-xs-12 col-sm-3">
   <ul>
     <li ng-repeat="entry in entries">
-      <a ui-sref="portfolio.detail({ entryId: entry.id })">{{ entry.label }}</a>
+      <a ui-sref="not-home.portfolio.detail({ entryId: entry.id })">{{ entry.label }}</a>
       <span ng-if="!!entry.externalUrl">/</span>
       <a ng-if="!!entry.externalUrl" href="{{entry.externalUrl}}" target="_blank" class="glyphicon glyphicon-new-window entry-link"></a>
     </li>
