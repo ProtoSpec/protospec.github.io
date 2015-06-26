@@ -37,7 +37,7 @@ angular.module('personalSite', [
   // Now set up the states
   $stateProvider
     .state('home', {
-      url: "/",
+      url: "",
       templateUrl: "partials/home.html"
     })
 
