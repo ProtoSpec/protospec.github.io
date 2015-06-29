@@ -1,7 +1,7 @@
-<a ui-sref="portfolio"><h3>Portfolio Entries</h3></a>
+<a id="portfolio-home" ui-sref="not-home.portfolio"><h3>Portfolio Entries</h3></a>
 
 <div id="portfolio-sidebar" class="col-xs-12 col-sm-3">
-  <ul>
+  <ul id="portfolio-entry-list">
     <li ng-repeat="entry in entries">
       <a ui-sref="not-home.portfolio.detail({ entryId: entry.id })">{{ entry.label }}</a>
       <span ng-if="!!entry.externalUrl">/</span>

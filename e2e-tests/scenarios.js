@@ -3,49 +3,90 @@
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
 describe('personal site', function() {
-  it('should render home.html when connecting to base site', function() {
-    browser.get('/');
-    var test = element.all(by.css('[ng-scope] #home-container')).first().getText();
+  // ---------------------------------- Testing Site Behavior ---------------------------
 
-    console.log('test:', test);
+  it('should redirect to home when the url is invalid', function() {
+    browser.get('/#/invalid-url-path');
 
-    expect(test)
-      .not.toBe(null);
-  })
+    expect(browser.getLocationAbsUrl()).toMatch(/^\/$/);
+  });
+
+  // ---------------------------------- Testing Home ------------------------------------
+
+  describe('home', function() {
+    it('should render home.html when connecting to empty url', function() {
+      browser.get('');
+
+      expect(element(by.id('home-container')).isPresent()).toBe(true);
+    });
+  });
+
+  // ---------------------------------- Testing Everything Not Home ---------------------
+
+  describe('not-home', function() {
+    it('should have a home button that takes one back to the main page', function() {
+      browser.get('/#/portfolio');
+
+      var homeButton = element(by.id('back-home'));
+      expect(homeButton.isPresent()).toBe(true);
+
+      homeButton.click();
+
+      expect(browser.getLocationAbsUrl()).toMatch('');
+    });
+  });
+
+  // ---------------------------------- Testing Portfolio -------------------------------
+
+  describe('portfolio', function() {
+    beforeEach(function() {
+      browser.get('/#/portfolio');
+    });
+
+    it('should load a list of portfolio entries', function() {
+      expect(browser.getLocationAbsUrl()).toMatch(/portfolio/);
+
+      // element.all(by.css('#portfolio-entry-list li')).count().then(function(it) { console.log(it); });
+
+      expect(element.all(by.css('#portfolio-entry-list li')).count()).toBeGreaterThan(0);
+    });
+
+    it('should link from portfolio to an entry', function() {
+      element.all(by.css('#portfolio-entry-list li a')).first().click();
+
+      // browser.getLocationAbsUrl().then(function(it) { console.log(it); });
+
+      expect(browser.getLocationAbsUrl()).toMatch(/portfolio\/.+/);
+
+      element(by.id('portfolio-home')).click();
+
+      expect(browser.getLocationAbsUrl()).toMatch(/portfolio$/);
+    });
+
+    describe('entries', function() {
+      it('should show information about lexos', function() {
+        browser.get('/#/portfolio/lexos');
+
+        expect(element(by.id('entry-desc')).isPresent()).toBe(true);
+        expect(element(by.id('entry-link')).isPresent()).toBe(true);
+        expect(element(by.id('entry-img')).isPresent()).toBe(true);
+      });
+    });
+  });
 
 
-  // it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-  //   browser.get('/');
-  //   expect(browser.getLocationAbsUrl()).toMatch("/view1");
-  // });
+  // ---------------------------------- Testing Resume ----------------------------------
 
 
-  // describe('view1', function() {
+  describe('resume', function() {
+    beforeEach(function() {
+      browser.get('/#/resume');
+    });
 
-  //   beforeEach(function() {
-  //     browser.get('index.html#/view1');
-  //   });
+    it('should load the resume page', function() {
+      expect(browser.getLocationAbsUrl()).toMatch(/resume/);
 
-
-  //   it('should render view1 when user navigates to /view1', function() {
-  //     expect(element.all(by.css('[ng-view] p')).first().getText()).
-  //       toMatch(/partial for view 1/);
-  //   });
-
-  // });
-
-
-  // describe('view2', function() {
-
-  //   beforeEach(function() {
-  //     browser.get('index.html#/view2');
-  //   });
-
-
-  //   it('should render view2 when user navigates to /view2', function() {
-  //     expect(element.all(by.css('[ng-view] p')).first().getText()).
-  //       toMatch(/partial for view 2/);
-  //   });
-
-  // });
+      expect(element(by.id('resume-preview')).isPresent()).toBe(true);
+    });
+  });
 });
