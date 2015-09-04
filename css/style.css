@@ -93,6 +93,7 @@ a:focus {
   margin-bottom: 100px;
   padding-top: 10px;
   padding-bottom: 30px;
+  min-height: 80vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 #portfolio-detail #entry-label {

@@ -55,7 +55,7 @@
       {
         "id": "bookexchange",
         "label": "Book Exchange",
-        "desc": "A short lived personal project in my spare time, I created a website to replace what was simply a facebook page as the place to exchange stuff, e.g. textbooks, especially at the end of semesters. Since such websites rely very heavily on momentum to succeed, I realized quickly that the site would be more reliant on my marketing skills than my development skills, which aren't what I was aiming to improve.",
+        "desc": "A short lived personal project in my spare time, and one of my first websites ever, I created this to replace what was simply a facebook page as the place to exchange stuff, e.g. textbooks, especially at the end of semesters. I realized fairly early on that I didn't have a competitive edge over the existing system.",
         "imgUrl": "/img/bookExchange-preview.png",
         "externalUrl": "http://wubex.herokuapp.com/"
       }

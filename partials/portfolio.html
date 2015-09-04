@@ -3,13 +3,13 @@
   <p>I'm a recent graduate from Wheaton College (MA) with a Bachelors in Computer Science. Over my college career I learned all the fundamentals of the trade, but I also had fun in my free time working on the things the interested me a little more. At the moment, those interests focus mainly on web development and artificial neural networks. Web development is fun because you can create production-quality products as a solo developer with HTML/CSS/JS, but my real passion is everything that can be done with neural nets. I'm not big on the academic/research side of things, so I may never go get my Masters and dive really deep into ANNs, but I really enjoy messing around with them, seeing how they can be applied, what their strengths (and weaknesses) are, and more. You can see a reflection of these interests in my portfolio below.</p>
 </div>
 
-<a id="portfolio-home" ui-sref="not-home.portfolio"><h3>Portfolio Entries</h3></a>
+<a id="portfolio-home" ui-sref="not-home.portfolio"><h3>Portfolio Categories</h3></a>
 
 <div id="portfolio-sidebar" class="col-xs-12 col-sm-3">
   <ul id="portfolio-category-list">
     <li ng-repeat="category in categories" ng-click="toggle(category)" class="category-item">
       {{ category.label }}
-      <ul ng-show="category.visible" class="portfolio-category-list">
+      <ul ng-show="category.visible" ng-click="$event.stopPropagation();" class="portfolio-category-list">
         <li ng-repeat="entry in category.entries" class="entry-item">
           <a ui-sref="not-home.portfolio.detail({ category: category.id, entryId: entry.id })">{{ entry.label }}</a>
           <span ng-if="!!entry.externalUrl">/</span>
