@@ -104,7 +104,6 @@ a {
 
 #portfolio-description {
   background-color: @portfolio-backer;
-  padding: 5px 40px;
 }
 
 #portfolio-sidebar {
@@ -115,12 +114,25 @@ a {
   ul {
     list-style: none;
     padding: 0;
+  }
 
-    li {
+  ul#portfolio-category-list {
+
+    li.category-item {
       padding: 5px 0;
+      cursor: pointer;
+      font-size: 2rem;
 
-      .entry-link {
-        margin-left: 5px;
+      ul.portfolio-category-list {
+        margin-left: 20px;
+        
+        li.entry-item {
+          font-size: 1.5rem;
+
+          .entry-link {
+            margin-left: 5px;
+          }
+        }
       }
     }
   }

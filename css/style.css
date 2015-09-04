@@ -1,1 +1,111 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);body{background-image:url('../img/colorPulse_V4.jpg');background-size:100vw 100vh;background-attachment:fixed;font-family:Ubuntu,sans-serif;color:#fff}a{color:inherit;text-decoration:none;opacity:.8;-webkit-transition:.25s linear all;-moz-transition:.25s linear all;-ms-transition:.25s linear all;-o-transition:.25s linear all;transition:.25s linear all}a:hover{opacity:1;color:inherit;text-decoration:none}a:focus{outline:none;color:inherit;text-decoration:none}.glyphicon-new-window{font-size:.7em;margin-left:.2em}#name-container{width:100%;text-align:center;margin-top:20vh}#name-container h1{font-weight:normal}#home-container{margin-top:40vh}#home-container #nav-links{list-style:none;padding:0;text-align:center}#home-container #nav-links li{display:inline-block;padding:10px 40px;font-size:20px}#back-home-container{text-align:center}#resume-title{text-align:center}#resume-title a{font-size:20px;margin-left:15px}#resume-preview{width:100%;height:100vh}#portfolio-description{background-color:rgba(0,0,0,0.5);padding:5px 40px}#portfolio-sidebar{background-color:rgba(0,0,0,0.5)}#portfolio-sidebar ul{list-style:none;padding:0}#portfolio-sidebar ul li{padding:5px 0}#portfolio-sidebar ul li .entry-link{margin-left:5px}#portfolio-detail{margin-bottom:100px;padding-top:10px;padding-bottom:30px;background-color:rgba(0,0,0,0.5)}#portfolio-detail #entry-label{display:inline}#portfolio-detail #entry-link{font-size:25px;margin-left:15px}#portfolio-detail p{margin-top:20px;margin-bottom:20px}#portfolio-detail img{width:100%}
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+body {
+  background-image: url('../img/colorPulse_V4.jpg');
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  font-family: Ubuntu, sans-serif;
+  color: white;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+  -webkit-transition: 0.25s linear all;
+  -moz-transition: 0.25s linear all;
+  -ms-transition: 0.25s linear all;
+  -o-transition: 0.25s linear all;
+  transition: 0.25s linear all;
+}
+a:hover {
+  opacity: 1.0;
+  color: inherit;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+}
+.glyphicon-new-window {
+  font-size: 0.7em;
+  margin-left: 0.2em;
+}
+#name-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 20vh;
+}
+#name-container h1 {
+  font-weight: normal;
+}
+#home-container {
+  margin-top: 40vh;
+}
+#home-container #nav-links {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+#home-container #nav-links li {
+  display: inline-block;
+  padding: 10px 40px;
+  font-size: 20px;
+}
+#back-home-container {
+  text-align: center;
+}
+#resume-title {
+  text-align: center;
+}
+#resume-title a {
+  font-size: 20px;
+  margin-left: 15px;
+}
+#resume-preview {
+  width: 100%;
+  height: 100vh;
+}
+#portfolio-description {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#portfolio-sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#portfolio-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+#portfolio-sidebar ul#portfolio-category-list li.category-item {
+  padding: 5px 0;
+  cursor: pointer;
+  font-size: 2rem;
+}
+#portfolio-sidebar ul#portfolio-category-list li.category-item ul.portfolio-category-list {
+  margin-left: 20px;
+}
+#portfolio-sidebar ul#portfolio-category-list li.category-item ul.portfolio-category-list li.entry-item {
+  font-size: 1.5rem;
+}
+#portfolio-sidebar ul#portfolio-category-list li.category-item ul.portfolio-category-list li.entry-item .entry-link {
+  margin-left: 5px;
+}
+#portfolio-detail {
+  margin-bottom: 100px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#portfolio-detail #entry-label {
+  display: inline;
+}
+#portfolio-detail #entry-link {
+  font-size: 25px;
+  margin-left: 15px;
+}
+#portfolio-detail p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#portfolio-detail img {
+  width: 100%;
+}

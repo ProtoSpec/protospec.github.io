@@ -1,58 +1,91 @@
 [
   {
-    "id": "lexos",
-    "label": "Lexos",
-    "desc": "I was part of a team, which I eventually led, building the Lexos online suite of tools. Lexos includes tools for preparation, visualization and analysis of humanities texts, applying computer science and machine learning to gather information.",
-    "imgUrl": "/img/lexos-preview.png",
-    "externalUrl": "http://lexos.wheatoncollege.edu/upload"
+    "id": "web",
+    "label": "Web Development/Design",
+    "entries": [
+      {
+        "id": "lexos",
+        "label": "Lexos",
+        "desc": "I led the team building the Lexos online suite of tools. Lexos includes tools for preparation, visualization and analysis of humanities texts, applying computer science and machine learning to gather information.",
+        "imgUrl": "/img/lexos-preview.png",
+        "externalUrl": "http://lexos.wheatoncollege.edu/upload"
+      },
+      {
+        "id": "riotapi2",
+        "label": "Riot's 2.0 API Challenge",
+        "desc": "I participated in Riot's 2nd API challenge, and I created this site to compare side-by-side the effects of a major change to the game in Patch 5.13, affecting many items.",
+        "imgUrl": "/img/riotapi2-preview.png",
+        "externalUrl": "http://buildtrees.bawjensen.com/#/"
+      },
+      {
+        "id": "wave",
+        "label": "WAVE Course Schedule",
+        "desc": "After getting tired of Wheaton's existing course schedule, I took the time to rebuild it from scratch, making it mobile-friendly and all that jazz.",
+        "imgUrl": "/img/wave-preview.png",
+        "externalUrl": "http://whale.wheatoncollege.edu/wave"
+      },
+      {
+        "id": "cempowered",
+        "label": "Citizens Empowered",
+        "desc": "I did contract work for a 501(c)3 nonprofit called Citizens Empowered, revamping their entire site as well as developing collaborative tools for their work.",
+        "imgUrl": "/img/cempowered-preview.png",
+        "externalUrl": "http://www.citizensempowered.org/"
+      },
+      {
+        "id": "buildsandskills",
+        "label": "BuildsAndSkills",
+        "desc": "This was a fun project in my spare time. I built a site that shows a player everything they need to know for playing a given champion in League of Legends, on one page. Priority is given to clarity over added functionality, making for a quick and simple user experience.",
+        "imgUrl": "/img/buildsAndSkills-preview.png",
+        "externalUrl": "http://buildsandskills.com/"
+      },
+      {
+        "id": "prosperityfocus",
+        "label": "Prosperity Focus",
+        "desc": "This was a very quick project. I simply grabbed a template, personalized it for the customer, and hosted it on GitHub Pages.",
+        "imgUrl": "/img/prosperityfocus-preview.png",
+        "externalUrl": "http://prosperityfocus.com/"
+      },
+      {
+        "id": "github",
+        "label": "GitHub Competition",
+        "desc": "I tried to create some friendly competitive spirit in my classmates by making a web page to track how many days in a row they could code and get GitHub commits.",
+        "imgUrl": "/img/github-preview.png",
+        "externalUrl": "http://whale.wheatoncollege.edu/github"
+      },
+      {
+        "id": "bookexchange",
+        "label": "Book Exchange",
+        "desc": "A short lived personal project in my spare time, I created a website to replace what was simply a facebook page as the place to exchange stuff, e.g. textbooks, especially at the end of semesters. Since such websites rely very heavily on momentum to succeed, I realized quickly that the site would be more reliant on my marketing skills than my development skills, which aren't what I was aiming to improve.",
+        "imgUrl": "/img/bookExchange-preview.png",
+        "externalUrl": "http://wubex.herokuapp.com/"
+      }
+    ]
   },
   {
-    "id": "wave",
-    "label": "WAVE Course Schedule",
-    "desc": "After getting tired of Wheaton's existing course schedule, I took the time to rebuild it from scratch, making it mobile-friendly and all that jazz.",
-    "imgUrl": "/img/wave-preview.png",
-    "externalUrl": "http://whale.wheatoncollege.edu/wave"
-  },
-  {
-    "id": "knexus",
-    "label": "Knexus Work",
-    "desc": "I worked for Knexus Research Corporation on a project from the Naval Research Lab, working on a project to create the brain for a UAV. My job was to integrate a simulator we had access to, for internal use as a state prediction system used to evaluate plans.",
-    "imgUrl": "/img/knexus-preview.png",
-    "externalUrl": ""
-  },
-  {
-    "id": "buildsandskills",
-    "label": "BuildsAndSkills",
-    "desc": "This was a fun project in my spare time. I built a site that shows a player everything they need to know for playing a given champion in League of Legends, on one page. Priority is given to clarity over added functionality, making for a quick and simple user experience.",
-    "imgUrl": "/img/buildsAndSkills-preview.png",
-    "externalUrl": "http://buildsandskills.com/"
-  },
-  {
-    "id": "github",
-    "label": "GitHub Competition",
-    "desc": "I tried to create some friendly competitive spirit in my classmates by making a web page to track how many days in a row they could code and get GitHub commits.",
-    "imgUrl": "/img/github-preview.png",
-    "externalUrl": "http://whale.wheatoncollege.edu/github"
-  },
-  {
-    "id": "leapmotion",
-    "label": "Leap Motion Rubik's Cube",
-    "desc": "As part of a college course we created an application for the Leap Motion Controller. Since we really wanted to create something that utilized the Leap Motion's unique capabilities, we chose to create an environment in which someone could manipulate and solve a Rubik's Cube, with the added ability of teaching the user as they went.",
-    "imgUrl": "/img/rubiksLeap-preview.png",
-    "externalUrl": ""
-  },
-  {
-    "id": "bookexchange",
-    "label": "Book Exchange",
-    "desc": "A short lived personal project in my spare time, I created a website to replace what was simply a facebook page as the place to exchange stuff, e.g. textbooks, especially at the end of semesters. Since such websites rely very heavily on momentum to succeed, I realized quickly that the site would be more reliant on my marketing skills than my development skills, which aren't what I was aiming to improve.",
-    "imgUrl": "/img/bookExchange-preview.png",
-    "externalUrl": "http://wubex.herokuapp.com/"
-  },
-  {
-    "id": "neuralnets",
-    "label": "Neural Net 2048",
-    "desc": "Over the course of my last year at college, I took part in a customized independent research course studying artificial neural networks (ANNs). This was a primarily implementation and conceptual learning experience, focusing less on the current research in the field of ANNs, and more on functionally how they perform and accomplish tasks. I ended up testing them on the game 2048, given its simplicity to implement and how easily it converts as input for a neural net.",
-    "imgUrl": "/img/ann-preview.png",
-    "externalUrl": ""
+    "id": "other",
+    "label": "Other Work",
+    "entries": [
+      {
+        "id": "leapmotion",
+        "label": "Leap Motion Rubik's Cube",
+        "desc": "As part of a college course we created an application for the Leap Motion Controller. Since we really wanted to create something that utilized the Leap Motion's unique capabilities, we chose to create an environment in which someone could manipulate and solve a Rubik's Cube, with the added ability of teaching the user as they went.",
+        "imgUrl": "/img/rubiksLeap-preview.png",
+        "externalUrl": ""
+      },
+      {
+        "id": "neuralnets",
+        "label": "2048 w/ Neural Network",
+        "desc": "Over the course of my last year at college, I took part in a customized independent research course studying artificial neural networks (ANNs). This was a primarily implementation and conceptual learning experience, focusing less on the current research in the field of ANNs, and more on functionally how they perform and accomplish tasks. I ended up testing them on the game 2048, given its simplicity to implement and how easily it converts as input for a neural net.",
+        "imgUrl": "/img/ann-preview.png",
+        "externalUrl": ""
+      },
+      {
+        "id": "knexus",
+        "label": "Knexus Work",
+        "desc": "I worked for Knexus Research Corporation on a project from the Naval Research Lab, working on a project to create the brain for a UAV. My job was to integrate a simulator we had access to, for internal use as a state prediction system used to evaluate plans.",
+        "imgUrl": "/img/knexus-preview.png",
+        "externalUrl": ""
+      }
+    ]
   }
 ]

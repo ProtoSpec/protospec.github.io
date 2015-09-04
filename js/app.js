@@ -17,11 +17,16 @@ angular.module('personalSite', [
 
 .controller('PortfolioListCtrl', ['$scope', 'Portfolio',
   function($scope, Portfolio) {
-    $scope.entries = Portfolio.query();
+    $scope.categories = Portfolio.query();
+    $scope.toggle = function(category) {
+      category.visible = !category.visible;
+      console.log(category.visible);
+    };
   }]
 )
 .controller('PortfolioDetailCtrl', ['$scope', '$stateParams', 'Portfolio',
   function ($scope, $stateParams, Portfolio) {
+    $scope.category = $stateParams.category;
     $scope.entryId = $stateParams.entryId;
     $scope.entries = Portfolio.query();
   }]
@@ -32,7 +37,7 @@ angular.module('personalSite', [
 .config(function($stateProvider, $urlRouterProvider) {
 
   // For any unmatched url, redirect to / (a.k.a. home)
-  $urlRouterProvider.otherwise("/");
+  // $urlRouterProvider.otherwise("/");
 
   // Now set up the states
   $stateProvider
@@ -61,7 +66,7 @@ angular.module('personalSite', [
     })
 
     .state('not-home.portfolio.detail', {
-      url: "/:entryId",
+      url: "/:category/:entryId",
       templateUrl: "partials/portfolioEntry.html",
       controller: 'PortfolioDetailCtrl'
     });
