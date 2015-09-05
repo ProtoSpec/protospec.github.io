@@ -66,6 +66,13 @@
     "label": "Other Work",
     "entries": [
       {
+        "id": "knexus",
+        "label": "Knexus Work",
+        "desc": "I worked for Knexus Research Corporation on a project from the Naval Research Lab, working on a project to create the brain for a UAV. My job was to integrate a simulator we had access to, for internal use as a state prediction system used to evaluate plans.",
+        "imgUrl": "/img/knexus-preview.png",
+        "externalUrl": "http://www.nrl.navy.mil/itd/aic/sites/www.nrl.navy.mil.itd.aic/files/pdfs/Jensen2014TN.pdf"
+      },
+      {
         "id": "leapmotion",
         "label": "Leap Motion Rubik's Cube",
         "desc": "As part of a college course we created an application for the Leap Motion Controller. Since we really wanted to create something that utilized the Leap Motion's unique capabilities, we chose to create an environment in which someone could manipulate and solve a Rubik's Cube, with the added ability of teaching the user as they went.",
@@ -77,13 +84,6 @@
         "label": "2048 w/ Neural Network",
         "desc": "Over the course of my last year at college, I took part in a customized independent research course studying artificial neural networks (ANNs). This was a primarily implementation and conceptual learning experience, focusing less on the current research in the field of ANNs, and more on functionally how they perform and accomplish tasks. I ended up testing them on the game 2048, given its simplicity to implement and how easily it converts as input for a neural net.",
         "imgUrl": "/img/ann-preview.png",
-        "externalUrl": ""
-      },
-      {
-        "id": "knexus",
-        "label": "Knexus Work",
-        "desc": "I worked for Knexus Research Corporation on a project from the Naval Research Lab, working on a project to create the brain for a UAV. My job was to integrate a simulator we had access to, for internal use as a state prediction system used to evaluate plans.",
-        "imgUrl": "/img/knexus-preview.png",
         "externalUrl": ""
       }
     ]
